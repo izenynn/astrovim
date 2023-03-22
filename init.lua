@@ -132,7 +132,7 @@ return {
     vim.api.nvim_create_autocmd("FileType", {
       desc = "Set tabstop for C and C++ files",
       group = "c_conf",
-      pattern = "cpp",
+      pattern = { "c", "h", "cc", "cpp", "hpp" },
       command = "setlocal tabstop=2 shiftwidth=2 softtabstop=2",
       --command = "setlocal noexpandtab tabstop=2 shiftwidth=2 softtabstop=2",
     })
