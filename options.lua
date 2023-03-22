@@ -7,6 +7,34 @@ return {
     spell = false, -- sets vim.opt.spell
     signcolumn = "auto", -- sets vim.opt.signcolumn to auto
     wrap = false, -- sets vim.opt.wrap
+    -- MY CONFIG
+    expandtab = true,
+    shiftwidth = 4,
+    tabstop = 4,
+    softtabstop = 4,
+    -- MY CONFIG
+    autoindent = true,
+    smarttab = true,
+    copyindent = true,
+    preserveindent = true,
+    -- MY CONFIG
+    colorcolumn = "80",
+    --foldmethod = "indent",
+    --foldlevel = 0,
+    --foldclose = "all",
+    -- MY CONFIG
+    list = true,
+    listchars = {
+      -- eol = "↓",
+      eol = "$",
+      tab = "> ",
+      trail = "-",
+      nbsp = "-",
+      extends = ">",
+      precedes = "<",
+      space = "·",
+    },
+    -- :set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
   },
   g = {
     mapleader = " ", -- sets vim.g.mapleader

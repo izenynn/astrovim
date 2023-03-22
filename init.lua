@@ -31,7 +31,7 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true, -- enable or disable format on save globally
+        enabled = false, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -49,7 +49,55 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
+      "omnisharp",
       -- "pyright"
+    },
+        -- Add overrides for LSP server settings, the keys are the name of the server
+    ["server-settings"] = {
+      omnisharp = function()
+        -- local pid = vim.fn.getpid()
+        -- local omnisharp_bin = "/home/user/software/omnisharp/run"
+        -- return {
+        --   cmd = {
+        --     omnisharp_bin,
+        --     "--languageserver",
+        --     "--hostPID",
+        --     tostring(pid)
+        --   };
+        --   -- root_dir = nvim_lsp.util.root_pattern("*.csproj", "*.sln");
+        --   root_dir = require("lspconfig.util").root_pattern("*.csproj", "*.sln");
+        -- }
+        -- OTHER
+        local lspconfig = require "lspconfig"
+        local pid = vim.fn.getpid()
+        local omnisharp_bin = "/home/user/software/omnisharp/omnisharp/OmniSharp.exe"
+
+        return {
+          cmd = { "mono", omnisharp_bin, "--languageserver","--hostPID", tostring(pid) },
+          filetypes = { "cs", "vb" },
+          init_options = {},
+          on_new_config = function(new_config, new_root_dir)
+            if new_root_dir then
+              table.insert(new_config.cmd, '-s')
+              table.insert(new_config.cmd, new_root_dir)
+            end
+          end,
+          root_dir = lspconfig.util.root_pattern("*.csproj", "*.sln");
+          -- root_dir = require("lspconfig.util").root_pattern("*.csproj", "*.sln");
+        }
+      end,
+      -- example for addings schemas to yamlls
+      -- yamlls = { -- override table for require("lspconfig").yamlls.setup({...})
+      --   settings = {
+      --     yaml = {
+      --       schemas = {
+      --         ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
+      --         ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
+      --         ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
+      --       },
+      --     },
+      --   },
+      -- },
     },
   },
 
@@ -80,5 +128,13 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
+    vim.api.nvim_create_augroup("c_conf", {})
+    vim.api.nvim_create_autocmd("FileType", {
+      desc = "Set tabstop for C and C++ files",
+      group = "c_conf",
+      pattern = "cpp",
+      command = "setlocal tabstop=2 shiftwidth=2 softtabstop=2",
+      --command = "setlocal noexpandtab tabstop=2 shiftwidth=2 softtabstop=2",
+    })
   end,
 }

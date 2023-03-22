@@ -25,4 +25,16 @@ return {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
+  i = {
+    -- MY CONFIG
+    ["jk"] = { "<esc>", desc = "Remap <ESC> to 'kj'" }
+  },
+  v = {
+    -- MY CONFIG
+    ["jk"] = { "<esc>", desc = "Remap <ESC> to 'kj'" }
+  },
+  c = {
+    -- MY CONFIG
+    ["jk"] = { "<C-C>", desc = "Remap <ESC> to 'kj'" }
+  },
 }
