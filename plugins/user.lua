@@ -9,4 +9,23 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  --{
+  {
+    "ellisonleao/gruvbox.nvim",
+    config = function()
+      require("gruvbox").setup({
+        contrast = "hard",
+        bold = true,
+        palette_overrides = {
+      },
+      transparent_mode = true,
+     })
+   end,
+  },
+  {
+    "sainnhe/gruvbox-material",
+  },
+  {
+    "sainnhe/sonokai",
+  },
 }
