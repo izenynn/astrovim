@@ -25,14 +25,13 @@ return {
     -- MY CONFIG
     list = true,
     listchars = {
-      -- eol = "↓",
-      eol = "$",
-      tab = "> ",
+      --eol = "$",
+      --tab = "> ",
       trail = "-",
       nbsp = "-",
       extends = ">",
       precedes = "<",
-      space = "·",
+      --space = "·",
     },
     -- :set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
     -- MY CONFIG (gruvbox)
@@ -46,10 +45,9 @@ return {
     diagnostics_mode = 3, -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
     icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
-    -- gruvbox
+    -- MY CONFIG (theme)
     --gruvbox_material_background = 'hard',
-    --sonokai_style = 'andromeda',
-    sonokai_style = 'shusia',
+    --sonokai_style = 'shusia',
   },
 }
 -- If you need more control, you can use the function()...end notation

@@ -17,8 +17,8 @@ return {
         contrast = "hard",
         bold = true,
         palette_overrides = {
+        transparent_mode = true,
       },
-      transparent_mode = true,
      })
    end,
   },
@@ -27,5 +27,14 @@ return {
   },
   {
     "sainnhe/sonokai",
+  },
+  {
+    "Shatur/neovim-ayu",
+    config = function()
+      require("ayu").setup({
+        mirage = false,
+     })
+   end,
+
   },
 }

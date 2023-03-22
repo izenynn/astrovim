@@ -21,6 +21,7 @@ return {
   --colorscheme = "astrodark",
   --colorscheme = "gruvbox-material",
   colorscheme = "sonokai",
+  --colorscheme = "ayu",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
