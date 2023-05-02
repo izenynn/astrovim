@@ -26,7 +26,7 @@ return {
     list = true,
     listchars = {
       --eol = "$",
-      --tab = "> ",
+      tab = "> ",
       trail = "-",
       nbsp = "-",
       extends = ">",
