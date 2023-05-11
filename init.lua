@@ -136,8 +136,8 @@ return {
       desc = "Set tabstop for C and C++ files",
       group = "c_conf",
       pattern = { "c", "h", "cc", "cpp", "hpp" },
-      command = "setlocal tabstop=2 shiftwidth=2 softtabstop=2",
-      --command = "setlocal noexpandtab tabstop=2 shiftwidth=2 softtabstop=2",
+      --command = "setlocal tabstop=2 shiftwidth=2 softtabstop=2",
+      command = "setlocal noexpandtab tabstop=8 shiftwidth=8 softtabstop=8",
     })
   end,
 }
