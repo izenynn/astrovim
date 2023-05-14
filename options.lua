@@ -31,7 +31,7 @@ return {
       nbsp = "-",
       extends = ">",
       precedes = "<",
-      --space = "·",
+      space = "·",
     },
     -- :set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
     -- MY CONFIG (gruvbox)
