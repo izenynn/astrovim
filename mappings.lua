@@ -20,6 +20,8 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    -- MY CONFIG
+    ["<leader>x"] = { ":x<cr>", desc = "Save and Exit File" },
   },
   t = {
     -- setting a mapping to false will disable it
@@ -27,14 +29,14 @@ return {
   },
   i = {
     -- MY CONFIG
-    ["jk"] = { "<esc>", desc = "Remap <ESC> to 'kj'" }
+    --["jk"] = { "<esc>", desc = "Remap <ESC> to 'jk'" },
   },
   v = {
     -- MY CONFIG
-    ["jk"] = { "<esc>", desc = "Remap <ESC> to 'kj'" }
+    --["jk"] = { "<esc>", desc = "Remap <ESC> to 'jk'" },
   },
   c = {
     -- MY CONFIG
-    ["jk"] = { "<C-C>", desc = "Remap <ESC> to 'kj'" }
+    --["jk"] = { "<C-C>", desc = "Remap <ESC> to 'jk'" },
   },
 }
